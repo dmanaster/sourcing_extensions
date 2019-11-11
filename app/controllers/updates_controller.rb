@@ -42,7 +42,7 @@ class UpdatesController < ApplicationController
   def update
     respond_to do |format|
       if @update.update(update_params)
-        format.html { redirect_to @update, notice: 'Update was successfully updated.' }
+        format.html { redirect_to [@update.extension, @update], notice: 'Update was successfully updated.' }
         format.json { render :show, status: :ok, location: @update }
       else
         format.html { render :edit }
@@ -69,6 +69,6 @@ class UpdatesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def update_params
-      params.require(:update).permit(:version, :date, :overview, :extension_id)
+      params.require(:update).permit(:version, :date, :overview, :extension_id, :reviewed)
     end
 end
