@@ -15,16 +15,17 @@
   <tbody>
     <% @extensions.each do |extension| %>
       <tr>
-        <td><%= extension.name %></td>
-        <td><%= extension.url %></td>
-        <td><%= extension.site %></td>
+        <td><%= link_to extension.name, extension.site %></td>
+        <td><%= link_to "Chrome Web Store", extension.url %></td>
         <td><%= link_to 'Show', extension %></td>
         <td><%= link_to 'Edit', edit_extension_path(extension) %></td>
         <td><%= link_to 'Destroy', extension, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-      <% extension.updates.each do update %>
+      <% extension.updates.each do |update| %>
         <tr>
-        <%= update.name  %>
+          <td><%= update.version  %></td>
+          <td><%= update.date.strftime("%-m/%-d/%Y")  %></td>
+          <td><%= update.reviewed  %></td>
         </tr>
       <% end %>
     <% end %>
