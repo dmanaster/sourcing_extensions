@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  version: MyString
+  date: 2019-11-11
+  overview: MyText
+  extension: one
+
+two:
+  version: MyString
+  date: 2019-11-11
+  overview: MyText
+  extension: two

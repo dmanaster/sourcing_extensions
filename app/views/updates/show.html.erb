@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Version:</strong>
+  <%= @update.version %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @update.date %>
+</p>
+
+<p>
+  <strong>Overview:</strong>
+  <%= @update.overview %>
+</p>
+
+<p>
+  <strong>Extension:</strong>
+  <%= @update.extension_id %>
+</p>
+
+<%= link_to 'Edit', edit_update_path(@update) %> |
+<%= link_to 'Back', updates_path %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @extension.name %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @extension.url %>
+</p>
+
+<p>
+  <strong>Site:</strong>
+  <%= @extension.site %>
+</p>
+
+<%= link_to 'Edit', edit_extension_path(@extension) %> |
+<%= link_to 'Back', extensions_path %>
