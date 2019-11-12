@@ -1,6 +1,8 @@
 <div class="container-fluid">
   <p id="notice"><%= notice %></p>
-
+  <div id="new-extension">
+    <%= link_to 'New Extension', new_extension_path, :remote => true%>
+  </div>
   <table class="table table-hover">
     <% @extensions.each do |extension| %>
       <thead class="thead-dark">
@@ -25,16 +27,12 @@
             <td></td>
             <td><%= link_to update.version, [extension, update]  %></td>
             <td><%= update.date.strftime("%-m/%-d/%Y")  %></td>
-            <%= form_for [extension, update] do |form| %>
-              <td><%= form.check_box :reviewed  %></td>      
-              <%= form.submit %>
+            <%= form_with model: [extension, update] do |form| %>
+              <td><%= form.check_box :reviewed, onchange: 'Rails.fire(this.form, "submit")'  %></td>      
             <% end %>
           </tr>
         <% end %>
       </tbody>
     <% end %>
   </table>
-
-
-  <%= link_to 'New Extension', new_extension_path %>
 </div>

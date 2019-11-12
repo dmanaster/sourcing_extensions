@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root "extensions#index"
   resources :extensions do
     resources :updates
   end
