@@ -1,0 +1,10 @@
+var new_link = document.getElementById('new-link');
+var form = document.getElementById('new-extension-form');
+new_link.style.display = "block";
+form.remove();
+
+var table = document.getElementById('extensions-table');
+var new_content = '<%= escape_javascript(render @extension) %>'
+table.insertAdjacentHTML('afterbegin', new_content);
+
+// table.innerHTML = new_content;
