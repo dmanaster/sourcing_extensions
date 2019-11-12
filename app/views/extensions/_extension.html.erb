@@ -3,7 +3,7 @@
     <th><%= link_to extension.name, extension.url %></th>
     <th></th>
     <th><%= link_to 'Edit', edit_extension_path(extension) %></th>
-    <th><%= link_to 'Delete', extension, method: :delete, data: { confirm: 'Are you sure?' } %></th>
+    <th><%= link_to 'Delete', extension, method: :delete, remote: true, data: { confirm: 'Are you sure?' } %></th>
   </tr>
 </thead>
 <thead class="thead-light">      

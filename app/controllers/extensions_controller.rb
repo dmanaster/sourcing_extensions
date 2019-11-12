@@ -25,7 +25,7 @@ class ExtensionsController < ApplicationController
   # POST /extensions.json
   def create
     @extension = Extension.new(extension_params)
-    @extensions = Extension.all
+
     respond_to do |format|
       if @extension.save
         format.js
@@ -57,6 +57,7 @@ class ExtensionsController < ApplicationController
   def destroy
     @extension.destroy
     respond_to do |format|
+      format.js
       format.html { redirect_to extensions_url, notice: 'Extension was successfully destroyed.' }
       format.json { head :no_content }
     end

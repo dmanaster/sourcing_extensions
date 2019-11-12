@@ -10,23 +10,17 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :url %>
-    <%= form.text_field :url %>
-  </div>
-
-  <div class="field">
-    <%= form.label :site %>
-    <%= form.text_field :site %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="row">
+    <div class="col">
+      <%= form.text_field :name, class: "form-control", placeholder: "Extension Name" %>
+    </div>
+    <div class="col-6">
+      <%= form.text_field :url, class: "form-control", placeholder: "Extension URL" %>
+    </div>
+    <div class="col">
+      <div class="actions">
+        <%= form.submit "Add New Chrome Extension", class: "btn btn-primary" %>
+      </div>
+    </div>
   </div>
 <% end %>
