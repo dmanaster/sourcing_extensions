@@ -1,38 +1,9 @@
 <div class="container-fluid">
   <p id="notice"><%= notice %></p>
   <div id="new-extension">
-    <%= link_to 'New Extension', new_extension_path, :remote => true%>
+    <%= link_to 'New Extension', new_extension_path, :remote => true, :id => 'new-link' %>
   </div>
-  <table class="table table-hover">
-    <% @extensions.each do |extension| %>
-      <thead class="thead-dark">
-        <tr>
-          <th><%= link_to extension.name, extension.url %></th>
-          <th></th>
-          <th><%= link_to 'Edit', edit_extension_path(extension) %></th>
-          <th><%= link_to 'Delete', extension, method: :delete, data: { confirm: 'Are you sure?' } %></th>
-        </tr>
-      </thead>
-      <thead class="thead-light">      
-        <tr>
-          <th></th>
-          <th>Version</th>
-          <th>Date Updated</th>
-          <th>Reviewed?</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% extension.updates.each do |update| %>
-          <tr>
-            <td></td>
-            <td><%= link_to update.version, [extension, update]  %></td>
-            <td><%= update.date.strftime("%-m/%-d/%Y")  %></td>
-            <%= form_with model: [extension, update] do |form| %>
-              <td><%= form.check_box :reviewed, onchange: 'Rails.fire(this.form, "submit")'  %></td>      
-            <% end %>
-          </tr>
-        <% end %>
-      </tbody>
-    <% end %>
+  <table id="extensions-table" class="table table-hover">
+    <%= render @extensions %>
   </table>
 </div>

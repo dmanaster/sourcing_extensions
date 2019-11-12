@@ -1,1 +1,4 @@
-$('#new-extension a').parent().html("<% j render 'form', :extension => @extension %>")
+var new_link = document.getElementById('new-link');
+var div = document.getElementById('new-extension');
+new_link.style.display = "none";
+div.insertAdjacentHTML('beforeend', '<%= escape_javascript(render "form", :extension => @extension) %>');

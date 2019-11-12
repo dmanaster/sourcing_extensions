@@ -25,9 +25,10 @@ class ExtensionsController < ApplicationController
   # POST /extensions.json
   def create
     @extension = Extension.new(extension_params)
-
+    @extensions = Extension.all
     respond_to do |format|
       if @extension.save
+        format.js
         format.html { redirect_to @extension, notice: 'Extension was successfully created.' }
         format.json { render :show, status: :created, location: @extension }
       else
