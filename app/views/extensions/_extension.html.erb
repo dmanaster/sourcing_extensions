@@ -1,12 +1,12 @@
-<thead class="thead-dark">
+<thead class="thead-dark extension-<%= extension.id %>">
   <tr>
     <th><%= link_to extension.name, extension.url %></th>
     <th></th>
     <th><%= link_to 'Edit', edit_extension_path(extension) %></th>
-    <th><%= link_to 'Delete', extension, method: :delete, remote: true, data: { confirm: 'Are you sure?' } %></th>
+    <th><%= link_to 'Delete', extension, method: :delete, remote: true, data: { confirm: 'WARNING: This will delete this extension and all tracked versions. Are you sure?' } %></th>
   </tr>
 </thead>
-<thead class="thead-light">      
+<thead class="thead-light extension-<%= extension.id %>">      
   <tr>
     <th></th>
     <th>Version</th>
@@ -14,7 +14,7 @@
     <th>Reviewed?</th>
   </tr>
 </thead>
-<tbody>
+<tbody class="extension-<%= extension.id %>">
   <% extension.updates.each do |update| %>
     <tr>
       <td></td>
