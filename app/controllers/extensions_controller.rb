@@ -1,5 +1,6 @@
 class ExtensionsController < ApplicationController
   before_action :set_extension, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /extensions
   # GET /extensions.json
