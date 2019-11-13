@@ -1,0 +1,14 @@
+body {
+  background: url('tools.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.sourcecon-green {
+  background-color: #6DAD48;
+}
+
+.background-grey {
+  background-color: #F8F9FA;
+}

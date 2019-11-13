@@ -1,0 +1,24 @@
+<%= stylesheet_link_tag "custom" %>
+<div class="modal-dialog" role="document">
+  <div class="modal-content background-grey">
+    <div class="modal-header text-center">
+      <h4 class="modal-title w-100 font-weight-bold">Sign up</h4>
+    </div>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <div class="modal-body">
+        <div class="form-group">
+          <%= f.email_field :email, class: "form-control", placeholder: "Email", autofocus: true, autocomplete: "email" %>
+        </div>
+        <div class="form-group">
+          <%= f.password_field :password, class: "form-control", placeholder: "Password (#{ @minimum_password_length } characters minimum)", autocomplete: "current-password" %>
+        </div>
+        <div class="form-group">
+          <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm password", autocomplete: "current-password" %>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <%= f.submit "Sign up", class: "btn btn-lg btn-success btn-block sourcecon-green" %>
+      </div>
+    <% end %>
+  </div>
+</div>
