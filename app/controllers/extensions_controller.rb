@@ -8,6 +8,14 @@ class ExtensionsController < ApplicationController
     @extensions = Extension.all
   end
 
+  def alphabet
+    @extensions = @extensions.alphabetical
+  end
+
+  def last_updated
+    @extensions = @extensions.last_updated
+  end
+
   # GET /extensions/1
   # GET /extensions/1.json
   def show

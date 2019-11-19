@@ -1,0 +1,3 @@
+var table = document.getElementById('extensions-table');
+var new_content = '<%= escape_javascript(render @extensions) %>';
+table.innerHTML = new_content;
