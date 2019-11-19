@@ -5,15 +5,11 @@ class ExtensionsController < ApplicationController
   # GET /extensions
   # GET /extensions.json
   def index
-    @extensions = Extension.all
+    @extensions = @extensions.last_updated
   end
 
   def alphabet
     @extensions = @extensions.alphabetical
-  end
-
-  def last_updated
-    @extensions = @extensions.last_updated
   end
 
   # GET /extensions/1
