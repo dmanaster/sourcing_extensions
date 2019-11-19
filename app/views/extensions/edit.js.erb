@@ -1,0 +1,4 @@
+var id_name = 'extension-name-<%= @extension.id %>';
+var thead = document.getElementById(id_name);
+thead.insertAdjacentHTML('beforeend', '<%= escape_javascript(render "form", :extension => @extension) %>');
+thead.innerHTML = '<%= escape_javascript(render "edit_form", :extension => @extension) %>';

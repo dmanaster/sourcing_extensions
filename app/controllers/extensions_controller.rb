@@ -48,6 +48,7 @@ class ExtensionsController < ApplicationController
   def update
     respond_to do |format|
       if @extension.update(extension_params)
+        format.js
         format.html { redirect_to @extension, notice: 'Extension was successfully updated.' }
         format.json { render :show, status: :ok, location: @extension }
       else

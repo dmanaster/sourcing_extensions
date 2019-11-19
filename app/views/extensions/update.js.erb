@@ -1,0 +1,4 @@
+var id_name = 'extension-head-<%= @extension.id %>';
+var thead = document.getElementById(id_name);
+var new_content = "<%= j render :partial => 'thead', :locals => { :extension => @extension } %>";
+thead.innerHTML = new_content;

@@ -1,0 +1,26 @@
+<%= form_with model: extension, id: "edit-form-#{extension.id}" do |form| %>
+  <% if extension.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(extension.errors.count, "error") %> prohibited this extension from being saved:</h2>
+
+      <ul>
+        <% extension.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="row my-2">
+    <div class="col">
+      <%= form.text_field :name, class: "form-control", placeholder: "Extension Name" %>
+    </div>
+    <div class="col-6">
+      <%= form.text_field :url, class: "form-control", placeholder: "Extension URL" %>
+    </div>
+    <div class="col">
+      <div class="actions">
+        <%= form.submit "Update Chrome Extension", class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+<% end %>

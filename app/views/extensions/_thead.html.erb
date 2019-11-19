@@ -1,0 +1,8 @@
+<thead id = "extension-head-<%= extension.id %>" class="thead-dark extension-<%= extension.id %>">
+  <tr>
+    <th id = "extension-name-<%= extension.id %>"><%= link_to extension.name, extension.url, target: :_blank %></th>
+    <th></th>
+    <th><%= link_to 'Edit', edit_extension_path(extension), remote: true %></th>
+    <th><%= link_to 'Delete', extension, method: :delete, remote: true, data: { confirm: 'WARNING: This will delete this extension and all tracked versions. Are you sure?' } %></th>
+  </tr>
+</thead>
