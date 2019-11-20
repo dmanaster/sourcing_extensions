@@ -6,6 +6,7 @@ a:link, a:visited, a:hover {
 thead.thead-dark tr th a:hover {
   color: white;
 }
+
 tbody tr td a:hover {
   color: #6c757d;
 }
@@ -13,6 +14,7 @@ tbody tr td a:hover {
 input.btn-sourcecon, button.btn-sourcecon {
   background-color: #6DAD48;
   border-color: #6DAD48;
+  color: white;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
@@ -37,4 +39,10 @@ a.dropdown-item:hover {
 input.btn-sourcecon:hover, button.btn-sourcecon:hover {
   background-color: #343a40;
   border-color: #343a40;
+  color: white;
+}
+
+thead.thead-sourcecon tr th {
+  background-color: #6DAD48;
+  color: white;
 }
