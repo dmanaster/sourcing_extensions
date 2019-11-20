@@ -50,3 +50,7 @@ thead.thead-sourcecon tr th {
 table.table.table-hover.table-sourcecon-header {
   margin-bottom: 0;
 }
+
+.edit-cell, .delete-cell {
+  width: 3%;
+}

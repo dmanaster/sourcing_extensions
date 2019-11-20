@@ -1,13 +1,10 @@
 <thead id = "extension-head-<%= extension.id %>" class="thead-light extension-<%= extension.id %>">
   <tr>
-    <th id = "extension-name-<%= extension.id %>"><%= link_to extension.name, extension.url, target: :_blank %></th>
-    <th></th>
-    <th></th>
-    <th></th>
-    <th class="text-right">
+    <th colspan="4" id = "extension-name-<%= extension.id %>"><%= link_to extension.name, extension.url, target: :_blank %></th>
+    <th class="edit-cell">
       <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_extension_path(extension), remote: true %>
     </th>
-    <th class="text-center">
+    <th class="delete-cell">
       <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, extension, method: :delete, remote: true, data: { confirm: 'WARNING: This will delete this extension and all tracked versions. Are you sure?' } %>
     </th>
   </tr>

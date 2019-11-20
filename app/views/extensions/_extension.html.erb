@@ -8,8 +8,8 @@
       <%= form_with model: [extension, update] do |form| %>
         <td class="text-center"><%= form.check_box :reviewed, onchange: 'Rails.fire(this.form, "submit")'  %></td>      
       <% end %>
-      <td></td>
-      <td></td>
+      <td class="edit-cell"></td>
+      <td class="delete-cell"></td>
     </tr>
   <% end %>
 </tbody>
