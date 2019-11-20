@@ -17,21 +17,27 @@
       </div>
     </div>
   </div>
-  <div>
-    <table class="table table-hover table-sourcecon-header">
-      <thead class="thead-sourcecon %>">      
-        <tr>
-          <th>Name</th>
-          <th class="text-center">Version</th>
-          <th class="text-center">Date Updated</th>
-          <th class="text-center">Reviewed?</th>
-          <th></th>
-          <th></th>
-        </tr>
-      </thead>
-    </table>
-    <table id="extensions-table" class="table table-hover">
-      <%= render @extensions %>
-    </table>
+  <div class="row">
+    <div class="col">
+      <table class="table table-hover table-sourcecon-header">
+        <thead class="thead-sourcecon %>">      
+          <tr>
+            <th>Name</th>
+            <th class="text-center">Version</th>
+            <th class="text-center">Date Updated</th>
+            <th class="text-center">Reviewed?</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <table id="extensions-table" class="table table-hover">
+        <%= render @extensions %>
+      </table>
+    </div>
   </div>
 </div>
