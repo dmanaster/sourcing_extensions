@@ -1,27 +1,25 @@
-<div class="container-fluid">
-  <div class="row my-3">
-    <div class= "col-9" id="new-extension">
-      <%= button_to 'Add New Chrome Extension', new_extension_path, :remote => true, :id => 'new-link', :type => "button", :class => "btn btn-primary btn-sourcecon", :method => :get %>
-    </div>
-    <div class= "col-1">
-    </div>
-    <div class="col-2">
-      <div class="dropdown">
-        <button class="btn btn-primary dropdown-toggle btn-sourcecon float-right" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Order by
-        </button>
-        <div id="order-button" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <%= link_to 'A -> Z', alphabet_path, :remote => true, :class => "dropdown-item", :method => :get %>
-          <%= link_to 'New Updates', extensions_path, :remote => true, :class => "dropdown-item", :method => :get %>
-        </div>
+<div class="row my-3">
+  <div class= "col-9" id="new-extension">
+    <%= button_to 'Add New Chrome Extension', new_extension_path, :remote => true, :id => 'new-link', :type => "button", :class => "btn btn-primary btn-sourcecon", :method => :get %>
+  </div>
+  <div class= "col-1">
+  </div>
+  <div class="col-2">
+    <div class="dropdown">
+      <button class="btn btn-primary dropdown-toggle btn-sourcecon float-right" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Order by
+      </button>
+      <div id="order-button" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <%= link_to 'A -> Z', alphabet_path, :remote => true, :class => "dropdown-item", :method => :get %>
+        <%= link_to 'New Updates', extensions_path, :remote => true, :class => "dropdown-item", :method => :get %>
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col">
-      <table id="extensions-table" class="table table-hover table-sourcecon-header">
-        <%= render "table", :extensions => @extensions %>
-      </table>
-    </div>
+</div>
+<div class="row">
+  <div class="col">
+    <table id="extensions-table" class="table table-hover table-sourcecon-header">
+      <%= render "table", :extensions => @extensions %>
+    </table>
   </div>
 </div>
