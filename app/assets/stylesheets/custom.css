@@ -46,3 +46,7 @@ thead.thead-sourcecon tr th {
   background-color: #6DAD48;
   color: white;
 }
+
+table.table.table-hover.table-sourcecon-header {
+  margin-bottom: 0;
+}
