@@ -1,14 +1,13 @@
-  <p>
-    <strong>Version:</strong>
-    <%= @update.version %>
-  </p>
-
-  <p>
-    <strong>Date:</strong>
-    <%= @update.date %>
-  </p>
-
-  <p>
-    <strong>Overview:</strong>
+<div class="card mt-3">
+  <h4 class="card-header">
+    <%= link_to @update.extension.name, @update.extension.url %>
+  </h4>
+  <div class="card-body">
+    <h6 class="card-title"><strong>Version:</strong> <%= @update.version %></h6>
+    <h6 class="card-text"><strong>Updated:</strong> <%= @update.date.strftime("%B %-d, %Y") %></h6>
+  </div>
+  <div class="card-footer text-muted">
+    <h6 class="my-3 font-weight-bold">Overview:</h6>
     <%= simple_format(@update.overview) %>
-  </p>
+  </div>
+</div>
