@@ -54,3 +54,11 @@ table.table.table-hover.table-sourcecon-header {
 .edit-cell, .delete-cell {
   width: 3%;
 }
+
+.sourcecon-highlight {
+  background-color: #FFFBCC;
+}
+
+.sourcecon-highlight:hover {
+  background-color: #faed27 !important;
+}
