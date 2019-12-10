@@ -1,4 +1,4 @@
-var new_link = document.getElementById('new-link');
-var div = document.getElementById('new-extension');
-new_link.style.display = "none";
-div.insertAdjacentHTML('beforeend', '<%= escape_javascript(render "form", :extension => @extension) %>');
+var buttons = document.getElementById('button-row');
+var table = document.getElementById('table-row');
+buttons.style.display = "none";
+table.insertAdjacentHTML('beforebegin', '<%= escape_javascript(render "form", :extension => @extension) %>');
