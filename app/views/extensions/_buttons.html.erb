@@ -4,22 +4,22 @@
   <div class= "col-3">
     <div class="dropdown">
       <button class="btn btn-primary dropdown-toggle btn-sourcecon float-right" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Types
+        Minor Filter
       </button>
       <div id="order-button" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <%= link_to 'Major Updates Only', extensions_path(:order => @order, :reviewed => @reviewed, :type => "major"), :remote => true, :class => "dropdown-item", :method => :get %>
-        <%= link_to 'Include Minor Updates', extensions_path(:order => @order, :reviewed => @reviewed, :type => "all"), :remote => true, :class => "dropdown-item", :method => :get %>
+        <%= link_to 'Filter Minor Updates (Default)', extensions_path(:order => @order, :reviewed => @reviewed, :type => "major"), :remote => true, :class => "dropdown-item", :method => :get %>
+        <%= link_to 'Show All Updates', extensions_path(:order => @order, :reviewed => @reviewed, :type => "all"), :remote => true, :class => "dropdown-item", :method => :get %>
       </div>
     </div>
   </div>
   <div class="col-3 text-center">
     <div class="dropdown">
       <button class="btn btn-primary dropdown-toggle btn-sourcecon float-right" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Show reviewed
+        Reviewed Filter
       </button>
       <div id="order-button" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <%= link_to 'Show Only Unreviewed', extensions_path(:order => @order, :reviewed => "unreviewed", :type => @type), :remote => true, :class => "dropdown-item", :method => :get %>
-        <%= link_to 'Include Reviewed', extensions_path(:order => @order, :reviewed => "all", :type => @type), :remote => true, :class => "dropdown-item", :method => :get %>
+        <%= link_to 'Filter Reviewed Updates (Default)', extensions_path(:order => @order, :reviewed => "unreviewed", :type => @type), :remote => true, :class => "dropdown-item", :method => :get %>
+        <%= link_to 'Show All Updates', extensions_path(:order => @order, :reviewed => "all", :type => @type), :remote => true, :class => "dropdown-item", :method => :get %>
       </div>
     </div>
   </div>
@@ -29,8 +29,8 @@
         Order by
       </button>
       <div id="order-button" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <%= link_to 'New Updates (Default)', extensions_path(:order => "last_updated", :reviewed => @reviewed, :type => @type), :remote => true, :class => "dropdown-item", :method => :get %>
         <%= link_to 'A -> Z', extensions_path(:order => "alpha", :reviewed => @reviewed, :type => @type), :remote => true, :class => "dropdown-item", :method => :get %>
-        <%= link_to 'New Updates', extensions_path(:order => "last_updated", :reviewed => @reviewed, :type => @type), :remote => true, :class => "dropdown-item", :method => :get %>
       </div>
     </div>
   </div>
