@@ -1,10 +1,18 @@
 <%= render :partial => 'thead', :locals => {:extension => extension} %>
 <tbody class="extension-<%= extension.id %>">
-  <% if @reviewed == "unreviewed" %>  
+  <% if @reviewed == "unreviewed" && @type == "major" %>
+    <% extension.updates.unreviewed.only_majors.each do |update| %>
+      <%= render :partial => 'tbody', :locals => {:update => update} %>
+    <% end %>
+  <% elsif @reviewed == "unreviewed" && @type == "all" %>
     <% extension.updates.unreviewed.each do |update| %>
       <%= render :partial => 'tbody', :locals => {:update => update} %>
     <% end %>
-  <% elsif @reviewed == "all" %>  
+  <% elsif @reviewed == "all" && @type == "major" %>
+    <% extension.updates.only_majors.each do |update| %>
+      <%= render :partial => 'tbody', :locals => {:update => update} %>
+    <% end %>
+  <% elsif @reviewed == "all" && @type == "all" %>
     <% extension.updates.each do |update| %>
       <%= render :partial => 'tbody', :locals => {:update => update} %>
     <% end %>

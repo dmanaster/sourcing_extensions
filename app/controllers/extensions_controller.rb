@@ -8,6 +8,7 @@ class ExtensionsController < ApplicationController
     @order = params[:order] || "last_updated"
     @reviewed = params[:reviewed] || "unreviewed"
     @type = params[:type] || "major"
+    @sort_hash = 
     if @order == "last_updated"
       @extensions = Extension.last_updated.includes(:updates)
     elsif @order == "alpha"
