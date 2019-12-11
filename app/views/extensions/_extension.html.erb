@@ -13,7 +13,7 @@
       <%= render :partial => 'tbody', :locals => {:update => update} %>
     <% end %>
   <% elsif @reviewed == "all" && @type == "all" %>
-    <% extension.updates.each do |update| %>
+    <% extension.updates.order(date: :DESC).each do |update| %>
       <%= render :partial => 'tbody', :locals => {:update => update} %>
     <% end %>
   <% end %>
