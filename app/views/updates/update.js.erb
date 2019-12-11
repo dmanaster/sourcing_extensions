@@ -1,3 +1,7 @@
 var id_name = 'update-row-<%= @update.id %>';
 var trow = document.getElementById(id_name);
 trow.classList.toggle('sourcecon-highlight');
+
+var cb_id_name = 'checkbox-<%= @update.id %>';
+var checkbox_cell = document.getElementById(cb_id_name);
+checkbox_cell.innerHTML = '<%= escape_javascript(render "extensions/checkbox", :update => @update) %>';

@@ -8,7 +8,9 @@
   <td class="text-center"><%= link_to update.version, [update.extension, update]  %></td>
   <td class="text-center"><%= update.date.strftime("%-m/%-d/%Y")  %></td>
   <%= form_with model: [update.extension, update] do |form| %>
-    <td class="text-center"><%= form.check_box :reviewed, onchange: 'Rails.fire(this.form, "submit")'  %></td>      
+    <td class="text-center" id="checkbox-<%= update.id %>">
+      <%= render "checkbox", :update => update %>
+    </td>      
   <% end %>
   <td class="edit-cell"></td>
   <td class="delete-cell"></td>

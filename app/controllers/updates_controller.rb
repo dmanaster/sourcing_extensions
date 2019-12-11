@@ -42,6 +42,7 @@ class UpdatesController < ApplicationController
   # PATCH/PUT /updates/1.json
   def update
     respond_to do |format|
+      puts params
       if @update.update(update_params)
         format.js
         format.html { redirect_to [@update.extension, @update], notice: 'Update was successfully updated.' }
@@ -71,6 +72,6 @@ class UpdatesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def update_params
-      params.require(:update).permit(:version, :date, :overview, :extension_id, :reviewed)
+      params.require(:update).permit(:version, :date, :overview, :extension_id, :reviewed, :major)
     end
 end

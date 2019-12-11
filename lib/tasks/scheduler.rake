@@ -28,13 +28,7 @@ task :get_updates => :environment do
         :major => major
         })
     rescue
-      Update.create({
-        :extension => extension,
-        :version => "Failed to get latest version",
-        :date => Date.today,
-        :overview => "Failed to get latest version",
-        :reviewed => false
-        })
+      puts "Failed to get latest version of #{extension.name}."
     end
   end
 end
