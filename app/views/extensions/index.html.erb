@@ -1,40 +1,5 @@
 <div class="row my-3" id="button-row">
-  <div class= "col-3" id="new-extension">
-    <%= button_to 'Add New Chrome Extension', new_extension_path, :remote => true, :id => 'new-link', :type => "button", :class => "btn btn-primary btn-sourcecon", :method => :get %>
-  </div>
-  <div class= "col-3">
-    <div class="dropdown">
-      <button class="btn btn-primary dropdown-toggle btn-sourcecon float-right" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Types
-      </button>
-      <div id="order-button" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <%= link_to 'Major Updates Only', alphabet_path, :remote => true, :class => "dropdown-item", :method => :get %>
-        <%= link_to 'Include Minor Updates', extensions_path, :remote => true, :class => "dropdown-item", :method => :get %>
-      </div>
-    </div>
-  </div>
-  <div class="col-3 text-center">
-    <div class="dropdown">
-      <button class="btn btn-primary dropdown-toggle btn-sourcecon float-right" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Show reviewed
-      </button>
-      <div id="order-button" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <%= link_to 'Show Only Unreviewed', alphabet_path, :remote => true, :class => "dropdown-item", :method => :get %>
-        <%= link_to 'Include Reviewed', extensions_path, :remote => true, :class => "dropdown-item", :method => :get %>
-      </div>
-    </div>
-  </div>
-  <div class="col-3">
-    <div class="dropdown">
-      <button class="btn btn-primary dropdown-toggle btn-sourcecon float-right" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Order by
-      </button>
-      <div id="order-button" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <%= link_to 'A -> Z', alphabet_path, :remote => true, :class => "dropdown-item", :method => :get %>
-        <%= link_to 'New Updates', extensions_path, :remote => true, :class => "dropdown-item", :method => :get %>
-      </div>
-    </div>
-  </div>
+  <%= render "buttons" %>
 </div>
 <div class="row" id="table-row">
   <div class="col">

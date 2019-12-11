@@ -1,6 +1,12 @@
 <%= render :partial => 'thead', :locals => {:extension => extension} %>
 <tbody class="extension-<%= extension.id %>">
-  <% extension.updates.each do |update| %>
-    <%= render :partial => 'tbody', :locals => {:update => update} %>
+  <% if @reviewed == "unreviewed" %>  
+    <% extension.updates.unreviewed.each do |update| %>
+      <%= render :partial => 'tbody', :locals => {:update => update} %>
+    <% end %>
+  <% elsif @reviewed == "all" %>  
+    <% extension.updates.each do |update| %>
+      <%= render :partial => 'tbody', :locals => {:update => update} %>
+    <% end %>
   <% end %>
 </tbody>

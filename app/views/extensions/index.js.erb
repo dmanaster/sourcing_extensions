@@ -1,3 +1,8 @@
+var buttons = document.getElementById('button-row');
+var new_buttons = '<%= escape_javascript(render "buttons") %>';
+buttons.innerHTML = new_buttons;
+console.log(buttons);
+
 var table = document.getElementById('extensions-table');
 var new_content = '<%= escape_javascript(render "table", :extensions => @extensions) %>';
 table.innerHTML = new_content;

@@ -5,11 +5,14 @@ class ExtensionsController < ApplicationController
   # GET /extensions
   # GET /extensions.json
   def index
-    @extensions = @extensions.last_updated
-  end
-
-  def alphabet
-    @extensions = @extensions.alphabetical
+    @order = params[:order] || "last_updated"
+    @reviewed = params[:reviewed] || "unreviewed"
+    @type = params[:type] || "major"
+    if @order == "last_updated"
+      @extensions = Extension.last_updated.includes(:updates)
+    elsif @order == "alpha"
+      @extensions = Extension.alphabetical.includes(:updates)
+    end
   end
 
   # GET /extensions/1
